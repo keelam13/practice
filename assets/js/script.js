@@ -21,3 +21,7 @@ function displayQuestion() {
 function displayBonusQuestion() {
     
 }
+
+function multipleChoice () {
+    
+}
