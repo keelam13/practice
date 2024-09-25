@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
