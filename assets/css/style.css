@@ -18,10 +18,6 @@ body {
     text-align: center;
 }
 
-.choices-btn {
-    display: none;
-}
-
 .start-btn {
     width: 200px;
     height: 60px;

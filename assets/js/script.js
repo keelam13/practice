@@ -1,49 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button")
+    let button = document.getElementsByTagName("button")[0];
 
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("class") === "start-btn") {
-                displayQuestion();
-            } else {
-                checkAnswer();
-            }
-        })
-    }
-})
+    button.addEventListener("click", function () {
+        let img = document.getElementsByTagName("img")[0];
+        img.src = "assets/images/rx.png";
+        img.style.maxWidth = "20%";
+        img.style.maxHeight = "20%";
+
+        let paragraph = document.getElementsByTagName("p")[0];
+        paragraph.style.width = "50%";
+        paragraph.style.textAlign = "left";
+                
+        button.textContent = "Submit answer"
+
+        displayQuestion();
+    });
+});
 
 function displayQuestion() {
-    
-    let body = document.getElementsByTagName('body')[0];
-
-    let img = document.getElementsByTagName("img")[0];
-    img.src = "assets/images/rx.png";
-
-    let choicesBtn = document.getElementsByClassName("choices-btn");
-    choicesBtn.style.display = "visible";
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        body.style.flexDirection = "row";
-        img.style.width = "50%";
-        img.style.height = "50%";
-    } else {
-        body.style.flexDirection = "column";
-        img.style.width = "30%";
-        img.style.height = "30%";
-    }
 
     let questions = ["What?", "Where?", "When?", "Who?", "Why?"];
     let question = Math.floor(Math.random() * questions.length);
-    let paragraph = document.getElementsByTagName("p")[0];
-    paragraph.textContent = `${questions[question]}`;
-
-    let answers = ["Dolor", "Santiago City", "July 3, 2024", "Birthday", "Party"];
-    let choices = Math.floor(Math.random() * answers.length);
     
-
-
+    document.getElementsByTagName("p").textContent = `${questions[question]}`;
 
 }
+    
+
+function questionaire() {
+    
+}
+
 
 function checkAnswer() {
 
@@ -63,4 +50,6 @@ function displayBonusQuestion() {
 
 function multipleChoice () {
 
+    let answers = ["Dolor", "Santiago City", "July 3, 2024", "Birthday", "Party"];
+    let choices = Math.floor(Math.random() * answers.length);
 }
